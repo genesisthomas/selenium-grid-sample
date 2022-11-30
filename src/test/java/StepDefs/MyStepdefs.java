@@ -35,7 +35,7 @@ public class MyStepdefs {
         options.addArguments("--disable-extensions"); // disabling extensions
         options.addArguments("--no-sandbox"); // Bypass OS security model
 //        driver = new ChromeDriver(options);
-        driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), options);
+        driver = new RemoteWebDriver(new URL("http://10.60.27.26:4444/wd/hub"), options);
         driver.manage().window().maximize();
     }
 
