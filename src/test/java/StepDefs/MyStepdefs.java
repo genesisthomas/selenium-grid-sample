@@ -8,12 +8,11 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.interactions.Actions;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -34,8 +33,8 @@ public class MyStepdefs {
         options.addArguments("disable-infobars"); // disabling infobars
         options.addArguments("--disable-extensions"); // disabling extensions
         options.addArguments("--no-sandbox"); // Bypass OS security model
-//        driver = new ChromeDriver(options);
-        driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), options);
+        String gridIP = System.getProperty("gridIP") != null ? System.getProperty("gridIP") : "0.0.0.0";
+        driver = new RemoteWebDriver(new URL("http://"+gridIP+":4444/wd/hub"), options);
         driver.manage().window().maximize();
     }
 
