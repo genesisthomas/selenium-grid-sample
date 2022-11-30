@@ -1,0 +1,8 @@
+target/
+.idea
+*.class
+.project
+.classpath
+*.iml
+headless_screenshot.png
+.DS_Store
